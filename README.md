@@ -179,17 +179,24 @@ Open `code.ipynb` in a local Jupyter Notebook environment with the dependencies 
 
 ### Dependencies
 
-Install the Python packages used by the notebook:
+The notebook imports the following third-party packages:
+
+- `torch` — model training, tensor operations, and GPU support
+- `torchvision` — the pre-trained ResNet-50 model and image transforms
+- `datasets` — loading the EuroSAT RGB dataset from Hugging Face
+- `numpy` — array operations and the change-detection mask
+- `matplotlib` — plots and saved result figures
+- `seaborn` — confusion-matrix visualization
+- `scikit-learn` — accuracy, classification report, and confusion matrix metrics
+- `Pillow` — opening, converting, and cropping satellite images
+
+Install them with:
 
 ```bash
-pip install torch torchvision matplotlib seaborn scikit-learn pillow requests
+pip install torch torchvision datasets numpy matplotlib seaborn scikit-learn Pillow
 ```
 
-The research workflow also uses Hugging Face Datasets for dataset handling. If your notebook environment does not already have it installed, install it with:
-
-```bash
-pip install datasets
-```
+The notebook also imports `os` from Python's standard library, so no separate installation is needed for it. `requests` is not imported by the provided notebook.
 
 ---
 
